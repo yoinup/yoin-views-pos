@@ -1,6 +1,8 @@
 @import 'paddings';
 @import 'textstyles';
 
+@image-size: 500px;
+
 #scan-screen {
 
 	> .header {
@@ -13,33 +15,68 @@
 			background-image: url(assets/images/brand.png);
 			background-size: 30%;
 			background-repeat: no-repeat;
-	    
-			margin-left: 40%;
+			
+			margin-left: 48%;
 			margin-top: 7px;
 
-  	}
+		}
 
-  }
+	}
 
-  > .screen-container {
+	> .screen-container {
 
-  	> #scan-box {
+		> #scan-box {
 
-  		> #scan-box-title {
+			> #scan-box-title {
 
-  			.text-is-font-bold-style;
-  			.box-padding-style;
+				.text-is-font-bold-style;
+				.box-padding-style;
 
-  		}
+			}
 
-  		#scan-box-content {
+			#scan-box-content {
 
-  			.box-padding-style;
+				.box-padding-style;
+				text-align: center;
 
-  		}
+				> #scan-box-content-image {
 
-  	}
+					//TODO : Change this to implement relative size
+					width: @image-size;
+					height: @image-size;
 
-  }
+					margin: 40px auto;
+					
+					background-color: white;
+					border-radius: 4%;
+					//box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
+
+					background-image: url(assets/images/iphone_qr.png);
+					background-repeat: no-repeat;
+					background-size: 90%;
+					background-position-x: 30px;
+					background-position-y: 30px;
+
+				}
+
+				> #scan-box-content-message {
+
+					width: @image-size;
+					margin: 5px auto;
+					.text-plain-is-font-grey-style;
+
+				}
+
+			}
+
+		}
+
+		> .scan-button {
+
+			margin: 20px auto;
+
+		}
+
+	}
 
 }
