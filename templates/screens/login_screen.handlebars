@@ -1,3 +1,4 @@
+{{#with view}}
 <div id="brand-container"></div>
 
 <div class="space by-six"></div>
@@ -9,9 +10,22 @@
 <div class="space by-two"></div>
 
 <div id="login-buttons" class="center">
+  
+  {{#if venueUser }}
 
-  {{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
-    contentI18n="enter" 
-    action="enter" }}
+    {{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
+      contentI18n="enter" 
+      action="goToScan" }}
+
+    {{view Yn.SingleBigButtonView class="enter-button is-blue button-text is-big is-font-black" 
+      content="logout" 
+      action="logout" }}
+
+  {{ else }}
+
+    put inputs for user and password
+
+  {{/if}}
 
 </div>
+{{/with}}

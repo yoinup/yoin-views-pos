@@ -1,0 +1,17 @@
+@import 'animations';
+
+.navigation {
+
+  -webkit-transform: translate3d(0,0,0);
+
+}
+
+.navigation.is-animated {
+
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 200ms;
+  -webkit-transition-timing-function: @ease-animation-style; 
+  //-webkit-transition: -webkit-transform @modal-duration/2 @ease-animation-style;
+  //-webkit-transition: -webkit-transform 200ms ease-in-out;
+
+}
