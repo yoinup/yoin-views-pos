@@ -9,23 +9,44 @@
 
 <div class="space by-two"></div>
 
-<div id="login-buttons" class="center">
-  
-  {{#if venueUser }}
+	{{#if venueUser }}
 
-    {{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
-      contentI18n="enter" 
-      action="goToScan" }}
+		<div id="login-buttons" class="center">
 
-    {{view Yn.SingleBigButtonView class="enter-button is-blue button-text is-big is-font-black" 
-      content="logout" 
-      action="logout" }}
+			{{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
+				contentI18n="enter" 
+				action="goToScan" }}
 
-  {{ else }}
+			{{view Yn.SingleBigButtonView class="enter-button is-blue button-text is-big is-font-black" 
+				content="logout" 
+				action="logout" }}
 
-    put inputs for user and password
+		</div>
 
-  {{/if}}
+	{{ else }}
 
-</div>
+		<div class="big-input-content">
+
+			{{view Yn.InputView id="login-email" class="big-input up" 
+				inputName="email"
+				type="email"
+				placeholderI18n="email" }} 
+
+			{{view Yn.InputView id="login-password" class="big-input down" 
+				inputName="password"
+				type="password"
+				placeholderI18n="password" }} 
+
+		</div>
+
+		<div id="login-buttons" class="center">
+
+			{{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
+				contentI18n="login" 
+				action="goToScan" }}
+
+		</div>
+
+	{{/if}}
+
 {{/with}}
