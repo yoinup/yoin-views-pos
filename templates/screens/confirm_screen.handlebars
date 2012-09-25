@@ -1,1 +1,155 @@
-confirmScreen
+{{#with view}}
+
+{{#view Yn.HeaderView id="confirm-header"}}
+
+	{{view Yn.BackButtonView }}
+
+	<div id="brand-container"></div>
+
+{{/view}}
+
+<div class="screen-container">
+
+	<div class="space by-two"></div>
+
+	<div id="confirm-box-product" class="box">
+
+		<div id="confirm-box-product-content" class="box-content">
+
+			<div id="confirm-box-product-content-element">
+
+				<div id="product-left-l">
+
+					{{view Yn.SquareImageView class="is-normal"
+						contentBinding="venue.brand"
+						withIcon=true }}
+
+				</div>
+
+				<div id="product-middle-l">
+
+					<div class="confirm-product-name">
+						Frapuccino
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="products">
+
+				{{view Yvi.ConfirmBoxProductSwipeView 
+					venueBinding="venue"
+					contentBinding="products"
+					selectedBinding="selected"}}
+
+				{{view Yn.CarouselCirclesView
+					contentBinding="products"
+					selectedBinding="selected"}}
+
+			</div>
+
+			<div id="confirm-box-product-description">
+
+				{{selected.description}}
+
+			</div>
+
+		</div>
+
+		<div id="confirm-box-product-title" class="box-title box-title-bottom">
+			{{I18n identifier}}:
+		</div>
+
+	</div>
+
+
+	{{#if severalInvitations}}
+
+		<div class="space by-two"></div>
+
+
+		<div id="confirm-box-other-products" class="box">
+
+			<div id="confirm-box-other-products-title" class="box-title box-title-top">
+
+				{{I18n other_products}}
+
+			</div>
+
+			<div id="confirm-box-other-products-content" class="box-content">
+
+				{{#each products}}
+
+					{{#view Yn.BtapView class="confirm-box-other-products-content-element" 
+    				action="changeProduct" }}
+
+    				{{name}}
+
+    			{{/view}}
+					
+
+				{{/each}}
+
+			</div>
+
+		</div>
+
+	{{/if}}
+
+
+	<div class="space by-two"></div>
+
+
+	<div id="confirm-box-consignee" class="box">
+
+		<div id="confirm-box-consignee-title" class="box-title box-title-top">
+
+			{{I18n consignee}}
+
+		</div>
+
+		<div id="confirm-box-consignee-content" class="box-content">
+
+			{{view Yvi.UserShortBlockView contentBinding="user" }}
+
+		</div>
+
+	</div>
+
+
+	<div class="space by-two"></div>
+
+
+	{{view Yn.MainButtonView id="confirm-button" class="is-green"
+			contentI18n="confirm"
+			action="confirmn" }}
+
+
+	<div class="space by-two"></div>
+
+
+	<div id="confirm-box-something-else" class="box">
+
+		<div id="confirm-box-something-else-title" class="box-title box-title-top">
+
+			{{I18n something_else_title}}
+
+		</div>
+
+		<div id="confirm-box-something-else-content" class="box-content">
+
+			{{view Yn.InputView id="login-email" class="single-input" 
+					inputName="something-else"
+					placeholderI18n="something_else_placeholder" }} 
+
+		</div>
+
+	</div>
+
+
+</div>
+
+{{/with}}
+
+

@@ -1,0 +1,48 @@
+@import 'colors';
+@import 'textstyles';
+
+.user-short-block {
+
+	> .user-short-block-content {
+	
+		display: table;
+		width: 100%;
+
+		> .user-short-block-content-image {
+
+			display: table-cell;
+			vertical-align: middle;
+			width: 12%;
+
+
+		}
+
+		> .user-short-block-content-name {
+
+			display: table-cell;
+			vertical-align: middle;
+			width: 88%;
+
+
+			> .user-short-block-content-username {
+
+				//TODO : Canbiar esto y pasarlo a texstyles
+				font-size: 20px;
+				font-weight: bold;
+				.text-is-font-black-style;
+
+			}
+			
+
+			> .user-short-block-content-city {
+
+					.text-is-small-style;
+					.text-is-font-grey-style;
+
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,60 @@
+
+{{#with view}}
+
+
+<div class="user-short-block-content">
+
+		<div class="user-short-block-content-image">
+
+			{{#if isFBUser }}
+
+				{{view Yn.SquareImageView class="is-big"
+					contentBinding="fbId"
+					isFBUser=true
+					withPhoto=true }}
+
+			{{else}}
+
+				{{view Yn.SquareImageView class="is-big"
+					contentBinding="content"
+					withPhoto=true }}
+
+			{{/if}}
+
+		</div>
+
+		<div class="user-short-block-content-name">
+
+			{{#if isFBUser }}
+
+				<span class="user-short-block-content-username">{{fbName}}</span>				
+
+			{{else}}
+
+				<span class="user-short-block-content-username">{{content.name}}</span>
+
+				{{#if showCity}}
+
+					{{#if content.city}}
+
+						<div class="user-short-block-content-city">
+
+							<span class="icon with-text is-icon-x-small" icon="i">
+
+							</span>
+
+							{{content.city.name}}
+
+						</div>
+
+					{{/if}}
+
+				{{/if}}
+
+			{{/if}}
+
+		</div>
+
+</div>
+
+{{/with}}

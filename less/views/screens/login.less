@@ -29,17 +29,38 @@
 
 	}
 
-	#big-input-content {
+	> .logged-box {
 
-		margin: (@size-one-space * 10) auto;
+		margin-top: @size-one-space * 10;
+
+		> .auth-buttons {
+
+			.auth-button {
+
+				margin: (@size-one-space * 2) auto;
+
+			}
+
+		}
 
 	}
 
-	#login-buttons {
+	> .unlogged-box {
 
-		.enter-button {
+		margin-top: @size-one-space * 10;
 
-			margin: (@size-one-space * 10) auto;
+		> #big-input-content {
+
+
+		}
+
+		> .auth-buttons {
+
+			.auth-button {
+
+				margin: (@size-one-space * 2) auto;
+
+			}
 
 		}
 

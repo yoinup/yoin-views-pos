@@ -11,41 +11,49 @@
 
 	{{#if venueUser }}
 
-		<div id="login-buttons" class="center">
+		<div class="logged-box">
 
-			{{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
+		<div class="auth-buttons">
+
+			{{view Yn.SingleBigButtonView class="auth-button is-grey button-text is-big is-font-black" 
 				contentI18n="enter" 
 				action="goToScan" }}
 
-			{{view Yn.SingleBigButtonView class="enter-button is-blue button-text is-big is-font-black" 
-				content="logout" 
+			{{view Yn.SingleBigButtonView class="auth-button is-red button-text is-big is-font-black" 
+				contentI18n="logout" 
 				action="logout" }}
 
 		</div>
 
+		</div>		
+
 	{{ else }}
 
-		<div class="big-input-content">
+		<div class="unlogged-box">
 
-			{{view Yn.InputView id="login-email" class="big-input up" 
-				inputName="email"
-				type="email"
-				placeholderI18n="email" }} 
+			<div class="big-input-content">
 
-			{{view Yn.InputView id="login-password" class="big-input down" 
-				inputName="password"
-				type="password"
-				placeholderI18n="password" }} 
+				{{view Yn.InputView id="login-email" class="big-input up" 
+					inputName="email"
+					type="email"
+					placeholderI18n="email" }} 
 
-		</div>
+				{{view Yn.InputView id="login-password" class="big-input down" 
+					inputName="password"
+					type="password"
+					placeholderI18n="password" }} 
 
-		<div id="login-buttons" class="center">
+			</div>
 
-			{{view Yn.SingleBigButtonView class="enter-button is-grey button-text is-big is-font-black" 
-				contentI18n="login" 
-				action="goToScan" }}
+			<div class="auth-buttons">
 
-		</div>
+				{{view Yn.SingleBigButtonView class="auth-button is-grey button-text is-big is-font-black" 
+					contentI18n="login" 
+					action="goToScan" }}
+
+			</div>
+
+		</div>		
 
 	{{/if}}
 
