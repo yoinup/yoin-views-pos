@@ -1,3 +1,6 @@
+
+@import 'sizes';
+@import 'colors';
 @import 'paddings';
 @import 'textstyles';
 
@@ -47,23 +50,29 @@
 
 					margin: 40px auto;
 					
-					background-color: white;
-					border-radius: 4%;
-					//box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
+					background-color: @pure-white;
+					border-radius: @border-box-radius-size;
+					box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
+					
 
 					background-image: url(assets/images/iphone_qr.png);
 					background-repeat: no-repeat;
 					background-size: 90%;
-					background-position-x: 30px;
-					background-position-y: 30px;
+					background-position-x: 25px;
+					background-position-y: 27px;
 
 				}
 
 				> #scan-box-content-message {
 
 					width: @image-size;
-					margin: 5px auto;
-					.text-plain-is-font-grey-style;
+					margin: 13px auto;
+
+					font-size: @font-normal;
+					margin-top: -16px;
+
+					.button-text-is-font-black-style;
+
 
 				}
 
