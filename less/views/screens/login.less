@@ -18,11 +18,12 @@
 		background-size: 100%;
 		background-repeat: no-repeat;
 		
-		margin-left: 25%;
-		margin-top: 30%;
+		margin-left: 23%;
+		margin-top: 20%;
 
 	}
 
+	/*
 	> #hello-container {
 
 		.ipad-hello-container-text-style;
@@ -31,18 +32,23 @@
 		//font-size: 38px;
 
 	}
+	*/
 
 	> .logged-box {
 
-		margin-top: @size-one-space * 8;
+		margin-top: @size-one-space * 10;
 
 		> .auth-buttons {
 
 			.auth-button {
 
 				margin: (@size-one-space * 2) auto;
-
 			}
+
+		>.auth-button-logout {
+
+			margin: (@size-one-space * 4) auto;
+		}
 
 		}
 
@@ -50,7 +56,7 @@
 
 	> .unlogged-box {
 
-		margin-top: @size-one-space * 10;
+		margin-top: @size-one-space * 8;
 
 		> #big-input-content {
 
@@ -65,8 +71,15 @@
 
 			}
 
+		>.auth-button-logout {
+
+			margin: (@size-one-space * 32) auto;
+		}
+
 		}
 
 	}
 
 }
+
+

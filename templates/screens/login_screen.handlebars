@@ -3,9 +3,7 @@
 
 <div class="space by-three"></div>
 
-<div id="hello-container">
-	{{I18n hello}}
-</div>
+
 
 <div class="space by-two"></div>
 
@@ -19,10 +17,12 @@
 				contentI18n="enter" 
 				action="goToScan" }}
 
+			
 			{{view Yn.SingleBigButtonView class="auth-button is-black button-text is-big is-font-white" 
 				contentI18n="logout" 
-				action="logout" }}
+				action="logout" }}	
 
+			
 		</div>
 
 		</div>		
@@ -50,6 +50,8 @@
 				{{view Yn.SingleBigButtonView class="auth-button is-grey button-text is-big is-font-black" 
 					contentI18n="login" 
 					action="goToScan" }}
+
+				<div class="auth-button-logout about-us text is-big is-font-orange">{{I18n about_us}}</div>
 
 			</div>
 
