@@ -29,7 +29,7 @@
 				<div id="product-middle-l">
 
 					<div class="confirm-product-name">
-						Frapuccino
+						{{selected.product.name}}
 					</div>
 
 				</div>
@@ -39,32 +39,31 @@
 			<div id="products">
 
 				{{view Yvi.ConfirmBoxProductSwipeView 
-					venueBinding="venue"
-					contentBinding="products"
+					contentBinding="invitations"
 					selectedBinding="selected"}}
 
 				{{view Yn.CarouselCirclesView
-					contentBinding="products"
+					contentBinding="invitations"
 					selectedBinding="selected"}}
 
 			</div>
 
 			<div id="confirm-box-product-description">
 
-				{{selected.description}}
+				{{selected.product.description}}
 
 			</div>
 
 		</div>
 
 		<div id="confirm-box-product-title" class="box-title box-title-bottom">
-			{{I18n identifier}}:
+			{{I18n identifier}}: {{selected.id}}
 		</div>
 
 	</div>
 
 
-	{{#if severalInvitations}}
+	{{#if otherInvitations}}
 
 		<div class="space by-two"></div>
 
@@ -79,12 +78,12 @@
 
 			<div id="confirm-box-other-products-content" class="box-content">
 
-				{{#each products}}
+				{{#each otherInvitations}}
 
 					{{#view Yn.BtapView class="confirm-box-other-products-content-element" 
     				action="changeProduct" }}
 
-    				{{name}}
+    				{{product.name}}
 
     			{{/view}}
 					
