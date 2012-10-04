@@ -6,6 +6,7 @@
 
 @image-size: 500px;
 
+
 #scan-screen {
 
 	> .header {
@@ -89,3 +90,36 @@
 	}
 
 }
+
+
+
+// When scan has an error
+#scan-screen.has-error {
+
+	> .screen-container {
+
+		> #scan-box {
+
+			#scan-box-content {
+
+				.box-padding-style;
+				text-align: center;
+
+				> #scan-box-content-image {
+
+					background-image: url(assets/images/iphone_qr_error.png);
+					background-repeat: no-repeat;
+					background-size: 90%;
+					background-position-x: 25px;
+					background-position-y: 27px;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
