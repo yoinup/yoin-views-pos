@@ -8,7 +8,8 @@
 
 {{/view}}
 
-<div class="screen-container">
+{{#view Yn.ScrollerView class="screen-container"
+  exclude="confirm-header" }}
 
 	<div class="space by-two"></div>
 
@@ -20,7 +21,7 @@
 
 				<div id="product-left-l">
 
-					{{view Yn.SquareImageView class="is-normal"
+					{{view Yn.SquareImageView class="is-big fix-scrolling-touch"
 						contentBinding="venue.brand"
 						withIcon=true }}
 
@@ -42,7 +43,7 @@
 					contentBinding="invitations"
 					selectedBinding="selected"}}
 
-				{{view Yn.CarouselCirclesView
+				{{view Yn.CarouselCirclesView class="fix-scrolling-touch"
 					contentBinding="invitations"
 					selectedBinding="selected"}}
 
@@ -81,7 +82,7 @@
 				{{#each otherInvitations}}
 
 					{{#view Yn.BtapView class="confirm-box-other-products-content-element" 
-    				action="changeProduct" }}
+    				action="changeInvitation" actionContentBinding="this" }}
 
     				{{product.name}}
 
@@ -146,8 +147,9 @@
 
 	</div>
 
+	<div class="space by-one"></div>
 
-</div>
+{{/view}}
 
 {{/with}}
 
