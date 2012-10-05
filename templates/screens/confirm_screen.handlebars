@@ -9,7 +9,7 @@
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
-  exclude="confirm-header" }}
+	exclude="confirm-header" }}
 
 	<div class="space by-two"></div>
 
@@ -81,12 +81,17 @@
 
 				{{#each otherInvitations}}
 
-					{{#view Yn.BtapView class="confirm-box-other-products-content-element" 
-    				action="changeInvitation" actionContentBinding="this" }}
+					{{#view Yn.BtapView class="confirm-box-other-products-content-element two-column-table" 
+						action="changeInvitation" actionContentBinding="this" }}
 
-    				{{product.name}}
+						<div class="vpr-name left-column">
+							{{product.name}}
+						</div>
+						<div class="price-label right-column"> 
+							{{product.price}} {{I18n currency_symbol}}
+						</div>
 
-    			{{/view}}
+					{{/view}}
 					
 
 				{{/each}}
@@ -112,6 +117,19 @@
 		<div class="confirm-box-person-content box-content">
 
 			{{view Yvi.UserShortBlockView contentBinding="selected.fromUser" }}
+
+		</div>
+
+		<div class="confirm-box-person-details box-title box-title-bottom">
+
+			<div class="confirm-box-person-details-city inline"></div>
+								
+			<div class="confirm-box-person-details-time f-right">
+			
+				<span class="icon with-text is-icon-small" icon="w"></span>
+				{{humanize dateBinding="selected.createdAt" }}
+			
+			</div>
 
 		</div>
 
