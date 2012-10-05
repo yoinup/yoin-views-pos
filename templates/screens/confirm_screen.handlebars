@@ -101,17 +101,60 @@
 	<div class="space by-two"></div>
 
 
-	<div id="confirm-box-consignee" class="box">
+	<div class="confirm-box-person box">
 
-		<div id="confirm-box-consignee-title" class="box-title box-title-top">
+		<div class="confirm-box-person-title box-title box-title-top">
+
+			{{I18n invited_by}}
+
+		</div>
+
+		<div class="confirm-box-person-content box-content">
+
+			{{view Yvi.UserShortBlockView contentBinding="selected.fromUser" }}
+
+		</div>
+
+	</div>
+
+
+	<div class="space by-two"></div>
+
+
+	<div class="confirm-box-person box">
+
+		<div class="confirm-box-person-title box-title box-title-top">
 
 			{{I18n consignee}}
 
 		</div>
 
-		<div id="confirm-box-consignee-content" class="box-content">
+		<div class="confirm-box-person-content box-content">
 
-			{{view Yvi.UserShortBlockView contentBinding="user" }}
+			{{#if selected.toUser }}
+
+				{{view Yvi.UserShortBlockView
+					contentBinding="selected.toUser" }}
+
+			{{else}}
+
+				{{#if selected.creationFbId }}
+
+					{{view Yvi.UserShortBlockView
+						typeBinding="selected.creationType"
+						fbIdBinding="selected.creationFbId"
+						fbNameBinding="selected.creationUsername" }}
+
+				{{else}}
+
+					{{view Yvi.UserShortBlockView
+						typeBinding="selected.creationType"
+						phoneNumberBinding="selected.creationPhone"
+						phoneNameBinding="selected.creationPhone" }}
+
+				{{/if}}
+
+			{{/if}}
 
 		</div>
 
