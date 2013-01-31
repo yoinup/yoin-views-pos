@@ -20,49 +20,35 @@
 	
 	}
 
-	> .logged-box {
+	> .login-box.is-unlogged {
 
 		margin-top: @size-one-space * 10;
 
-		> .auth-buttons {
 
-			.auth-button {
+		> .large-button {
 
-				margin: (@size-one-space * 2) auto;
-			}
-
-		>.auth-button-logout {
-
-			margin: (@size-one-space * 4) auto;
+			margin: (@size-one-space * 2) auto;
 		}
 
-		}
+
 
 	}
 
-	> .unlogged-box {
+	> .login-box.is-logged {
 
 		margin-top: @size-one-space * 8;
 
-		> #big-input-content {
+		> .large-button:first-child {
 
+			margin: (@size-one-space * 2) auto;
 
 		}
 
-		> .auth-buttons {
-
-			.auth-button {
-
-				margin: (@size-one-space * 2) auto;
-
-			}
-
-		>.auth-button-logout {
+		> .large-button:last-child {
 
 			margin: (@size-one-space * 32) auto;
 		}
 
-		}
 
 	}
 

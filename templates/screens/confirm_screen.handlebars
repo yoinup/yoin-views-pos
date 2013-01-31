@@ -3,7 +3,6 @@
 {{#view Yn.HeaderView id="confirm-header" class="with-small-shadow"}}
 
 	{{view Yn.BackButtonView }}
-
 	<div class="brand-container"></div>
 
 {{/view}}
@@ -65,30 +64,34 @@
 		<div class="space by-two"></div>
 
 
-		<div id="confirm-box-other-products" class="box">
+		<div class="box">
 
-			<div id="confirm-box-other-products-title" class="box-title box-title-top">
+			<div class="box-title-top">
 
 				{{I18n other_products}}
 
 			</div>
 
-			<div id="confirm-box-other-products-content" class="box-content">
+      <div class="box-content has-li">
 
 				{{#each otherInvitations}}
 
-					{{#view Yn.BtapView class="confirm-box-other-products-content-element two-column-table" 
-						action="changeInvitation" actionContentBinding="this" }}
+          <div class="box-content-li has-tap">
 
-						<div class="vpr-name left-column">
-							{{product.name}}
-						</div>
-						<div class="price-label right-column"> 
-							{{product.price}} {{I18n currency_symbol}}
-						</div>
+            {{#view Yn.BtapView class="box-content-element two-column-table" 
+              action="changeInvitation" actionContentBinding="this" }}
 
-					{{/view}}
+              <div class="main-text left-column">
+                {{product.name}}
+              </div>
+              <div class="price-label right-column"> 
+                {{product.price}} {{I18n currency_symbol}}
+              </div>
+
+            {{/view}}
 					
+
+          </div>
 
 				{{/each}}
 
@@ -102,25 +105,23 @@
 	<div class="space by-two"></div>
 
 
-	<div class="confirm-box-person box">
+	<div class="box">
 
-		<div class="confirm-box-person-title box-title box-title-top">
+		<div class="box-title-top">
 
 			{{I18n invited_by}}
 
 		</div>
 
-		<div class="confirm-box-person-content box-content">
+		<div class="box-content">
 
 			{{view Yvi.UserShortBlockView contentBinding="selected.fromUser" }}
 
 		</div>
 
-		<div class="confirm-box-person-details box-title box-title-bottom">
-
-			<div class="confirm-box-person-details-city inline"></div>
+		<div class="box-title-bottom">
 								
-			<div class="confirm-box-person-details-time f-right">
+			<div class="f-right">
 			
 				<span class="icon with-text is-icon-small" icon="w"></span>
 				{{humanize dateBinding="selected.created" }}
@@ -135,15 +136,15 @@
 	<div class="space by-two"></div>
 
 
-	<div class="confirm-box-person box">
+	<div class="box">
 
-		<div class="confirm-box-person-title box-title box-title-top">
+		<div class="box-title-top">
 
 			{{I18n consignee}}
 
 		</div>
 
-		<div class="confirm-box-person-content box-content">
+		<div class="box-content">
 
 			{{#if selected.toUser }}
 
@@ -175,26 +176,21 @@
 	</div>
 
 
-	<div class="space by-four"></div>
-
-
-	{{view Yn.MainButtonView id="confirm-button" class="is-green"
+	{{view Yn.MainButtonView class="is-green"
 			contentI18n="confirm"
 			action="confirm" }}
 
 
-	<div class="space by-four"></div>
 
+	<div class="box">
 
-	<div id="confirm-box-something-else" class="box">
-
-		<div id="confirm-box-something-else-title" class="box-title box-title-top">
+		<div class="box-title-top">
 
 			{{I18n something_else_title}}
 
 		</div>
 
-		<div id="confirm-box-something-else-content" class="box-content">
+		<div class="box-content">
 
 			{{view Yn.InputView id="login-email" class="single-input" 
 					inputName="something-else"
@@ -204,7 +200,7 @@
 
 	</div>
 
-	<div class="space by-one"></div>
+	<div class="space by-two"></div>
 
 {{/view}}
 

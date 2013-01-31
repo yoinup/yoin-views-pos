@@ -22,19 +22,19 @@
 
 	<div class="space by-two"></div>
 
-	<div id="scan-box" class="box">
+	<div class="box">
 
-		<div id="scan-box-title" class="box-title box-title-top">
+		<div class="box-title-top">
 
 			{{I18n scan_title}}
 
 		</div>
 
-		<div id="scan-box-content" class="box-content">
+		<div class="box-content">
 
 			<div id="scan-box-content-image"></div>
 
-			<div id="scan-box-content-message">
+			<div class="main-text">
 
 				{{I18n scan_help}}
 
@@ -44,7 +44,7 @@
 
 	</div>
 
-	{{view Yn.MainButtonView class="scan-button is-blue"
+	{{view Yn.MainButtonView class="is-blue"
 			contentI18n="scan"
 			action="scan" }}
 
