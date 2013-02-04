@@ -8,16 +8,6 @@
 {{/view}}
 
 
-{{#if notificationIsVisible}}
-
-	{{view Yn.NotificationView
-		contentBinding="notificationContent"
-		typeBinding="notificationType"
-		isInDomBinding="notificationIsVisible" }}
-
-{{/if}}
-
-
 <div class="screen-container">
 
 	<div class="space by-two"></div>
@@ -34,7 +24,7 @@
 
 			<div id="scan-box-content-image"></div>
 
-			<div class="main-text">
+			<div class="detail-text">
 
 				{{I18n scan_help}}
 
