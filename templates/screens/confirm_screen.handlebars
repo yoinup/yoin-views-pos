@@ -12,51 +12,11 @@
 
 	<div class="space by-two"></div>
 
-	<div id="confirm-box-product" class="box">
-
-		<div id="confirm-box-product-content" class="box-content">
-
-			<div id="confirm-box-product-content-element">
-
-				<div id="product-left-l">
-
-					{{view Yn.SquareImageView class="is-big fix-scrolling-touch"
-						contentBinding="venue.brand"
-						withIcon=true }}
-
-				</div>
-
-				<div id="product-middle-l">
-
-					<div class="confirm-product-name">
-						{{selected.product.name}}
-					</div>
-
-				</div>
-
-			</div>
-
-			<div id="products">
-
-				{{view Yvi.ConfirmBoxProductSwipeView 
-					contentBinding="invitations"
-					selectedBinding="selected"}}
-
-				{{view Yn.CarouselCirclesView class="fix-scrolling-touch"
-					contentBinding="invitations"
-					selectedBinding="selected"}}
-
-			</div>
-
-			<div id="confirm-box-product-description">
-
-				{{selected.product.description}}
-
-			</div>
-
-		</div>
-
-	</div>
+  {{view Yn.VenueBoxView 
+    productsBinding="products"
+    hasDescription=true
+    brandBinding="venue.brand"
+    venueBinding="venue" }}
 
 
 	{{#if otherInvitations}}
