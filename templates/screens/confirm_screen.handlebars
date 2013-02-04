@@ -115,7 +115,9 @@
 
 		<div class="box-content">
 
-			{{view Yvi.UserShortBlockView contentBinding="selected.fromUser" }}
+      {{view Yn.UserShortBlockView class="is-x-small"
+        imagetype="is-big"
+        contentBinding="selected.fromUser" }}
 
 		</div>
 
@@ -148,21 +150,24 @@
 
 			{{#if selected.toUser }}
 
-				{{view Yvi.UserShortBlockView
+				{{view Yn.UserShortBlockView class="is-x-small"
+          imagetype="is-big"
 					contentBinding="selected.toUser" }}
 
 			{{else}}
 
 				{{#if selected.creationFbId }}
 
-					{{view Yvi.UserShortBlockView
+					{{view Yn.UserShortBlockView class="is-x-small" 
+            imagetype="is-big"
 						typeBinding="selected.creationType"
 						fbIdBinding="selected.creationFbId"
 						fbNameBinding="selected.creationUsername" }}
 
 				{{else}}
 
-					{{view Yvi.UserShortBlockView
+        {{view Yn.UserShortBlockView class="is-x-small"
+            imagetype="is-big"
 						typeBinding="selected.creationType"
 						phoneNumberBinding="selected.creationPhone"
 						phoneNameBinding="selected.creationPhone" }}
@@ -205,5 +210,3 @@
 {{/view}}
 
 {{/with}}
-
-
