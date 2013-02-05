@@ -17,6 +17,20 @@
       {{view Yn.SingleBigButtonView class="is-black button-text is-big is-font-white" 
         contentI18n="logout" 
         action="logout" }}	
+
+
+      <div class="space by-two"></div>
+
+      {{#view Yn.BtapView class="rectangle-button-adaptative register-button is-orange button-text is-small is-font-white" 
+        action="changeCamera" }}
+
+        {{#if isDeviceFront }}
+          {{I18n camera_front}}
+        {{else}}
+          {{I18n camera_back}}
+        {{/if}}
+
+      {{/view}}
         
 
 		</div>		
