@@ -1,6 +1,6 @@
 {{#with view}}
 
-{{#view Yn.HeaderView id="confirm-header" class="with-small-shadow"}}
+{{#view Yn.HeaderView class="with-small-shadow"}}
 
 	{{view Yn.BackButtonView }}
 	<div class="brand-container"></div>
@@ -8,7 +8,7 @@
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
-	exclude="confirm-header" }}
+	exclude=".header" }}
 
 	<div class="space by-two"></div>
 
@@ -41,11 +41,13 @@
             {{#view Yn.BtapView class="box-content-element two-column-table" 
               action="changeInvitation" actionContentBinding="this" }}
 
-              <div class="main-text left-column">
+              <div class="main main-text left-column">
                 {{product.name}}
               </div>
-              <div class="price-label right-column"> 
-                {{product.price}} {{I18n currency_symbol}}
+
+              <div class="right-column">
+                {{view Yn.PriceLabelView
+                  productBinding="product"}}   
               </div>
 
             {{/view}}
@@ -155,7 +157,7 @@
 
 		</div>
 
-		<div class="box-content">
+		<div class="box-content has-padding">
 
 			{{view Yn.InputView id="login-email" class="single-input" 
 					inputName="something-else"
