@@ -1,70 +1,74 @@
 {{#with view}}
 
-<div id="login-brand-container" class="brand-container"></div>
+  <div class="row one">
+  </div>
 
-<div class="space by-seven"></div>
+  <div class="row two">
+    <div id="login-brand-container" class="brand-container"></div>
+  </div>
 
-	{{#if venueUser }}
+  <div class="row three">
 
-		<div class="login-box is-logged">
+    {{#if venueUser }}
 
-
-      {{view Yn.SingleBigButtonView class="is-orange button-text is-big is-font-white" 
-        contentI18n="enter" 
-        action="goToScan" }}
-
-      
-      {{view Yn.SingleBigButtonView class="is-black button-text is-big is-font-white" 
-        contentI18n="logout" 
-        action="logout" }}	
+      <div class="login-box is-logged">
 
 
-      <div class="space by-two"></div>
+        {{view Yn.SingleBigButtonView class="is-orange button-text is-big is-font-white" 
+          contentI18n="enter" 
+          action="goToScan" }}
 
-      {{#view Yn.BtapView class="rectangle-button-adaptative register-button is-orange button-text is-small is-font-white" 
-        action="changeCamera" }}
-
-        {{#if isDeviceFront }}
-          {{I18n camera_front}}
-        {{else}}
-          {{I18n camera_back}}
-        {{/if}}
-
-      {{/view}}
         
-
-		</div>		
-
-	{{ else }}
-
-		<div class="login-box is-unlogged">
-
-			<div class="big-input-content">
-
-				{{view Yn.InputView id="username" class="big-input up" 
-					inputName="username"
-					type="username"
-					placeholderI18n="username" }} 
-
-				{{view Yn.InputView id="password" class="big-input down" 
-					inputName="password"
-					type="password"
-					placeholderI18n="password" }} 
-
-			</div>
+        {{view Yn.SingleBigButtonView class="is-black button-text is-big is-font-white" 
+          contentI18n="logout" 
+          action="logout" }}	
 
 
-      {{view Yn.SingleBigButtonView class="is-grey button-text is-big is-font-black" 
-        contentI18n="login"
-        inputs="username password" 
-        action="login" }}
+        <div class="space by-two"></div>
+
+        {{#view Yn.BtapView class="rectangle-button-adaptative register-button is-orange button-text is-small is-font-white" 
+          action="changeCamera" }}
+
+          {{#if isDeviceFront }}
+            {{I18n camera_front}}
+          {{else}}
+            {{I18n camera_back}}
+          {{/if}}
+
+        {{/view}}
+          
+
+      </div>		
+
+    {{ else }}
+
+      <div class="login-box is-unlogged">
+
+        <div class="big-input-content">
+
+          {{view Yn.InputView id="username" class="big-input up" 
+            inputName="username"
+            type="username"
+            placeholderI18n="username" }} 
+
+          {{view Yn.InputView id="password" class="big-input down" 
+            inputName="password"
+            type="password"
+            placeholderI18n="password" }} 
+
+        </div>
 
 
-				
+        {{view Yn.SingleBigButtonView class="is-grey button-text is-big is-font-black" 
+          contentI18n="login"
+          inputs="username password" 
+          action="login" }}
 
 
-		</div>		
+      </div>		
 
-	{{/if}}
+    {{/if}}
+
+  </div>		
 
 {{/with}}

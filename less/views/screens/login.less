@@ -2,44 +2,46 @@
 
 #login-screen {
 
-	text-align: center;
+  > .row.one {
+    height: 30%;
+  }
+  
+  > .row.two {
 
-	> #login-brand-container.brand-container {
+    height: 20%;
+    > #login-brand-container.brand-container {
 
-		height: 11%;
-		width: 31.5%;
-		
-		margin-left: 34%;
-		margin-top: 21%;
+      height: 112px;
+      width: 242px;
 
-	
-	}
+      margin: 0 auto;
+    }
 
-	> .login-box.is-unlogged {
+  }
 
-		margin-top: @size-one-space * 10;
+  > .row.three {
+    height: 50%;
 
-
-		> .large-button {
-
-			margin: (@size-one-space * 2) auto;
-		}
-
+    > .login-box.is-unlogged {
 
 
-	}
+      > .large-button {
 
-	> .login-box.is-logged {
-
-		margin-top: @size-one-space * 8;
-
-
-		> .button-text {
-
-			margin: (@size-one-space * 2) auto;
-		}
+        margin: (@size-one-space * 2) auto;
+      }
 
 
-	}
+    }
+
+    > .login-box.is-logged {
+
+      > .button-text {
+
+        margin: (@size-one-space * 2) auto;
+      }
+
+
+    }
+  }
 
 }
