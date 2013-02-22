@@ -26,16 +26,19 @@
 
         <div class="space by-two"></div>
 
-        {{#view Yn.BtapView class="rectangle-button-adaptative register-button is-orange button-text is-small is-font-white" 
-          action="changeCamera" }}
 
-          {{#if isDeviceFront }}
-            {{I18n camera_front}}
-          {{else}}
-            {{I18n camera_back}}
-          {{/if}}
+        {{#if showCameraDeviceButton}}
+          {{#view Yn.BtapView class="rectangle-button-adaptative register-button is-orange button-text is-small is-font-white" 
+            action="changeCamera" }}
 
-        {{/view}}
+            {{#if isDeviceFront }}
+              {{I18n camera_front}}
+            {{else}}
+              {{I18n camera_back}}
+            {{/if}}
+
+          {{/view}}
+        {{/if}}
           
 
       </div>		
