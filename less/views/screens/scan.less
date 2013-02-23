@@ -3,8 +3,9 @@
 @import 'colors';
 @import 'paddings';
 @import 'textstyles';
+@import 'aligns';
 
-@image-size: 500px;
+@scan-margin: 30px;
 
 
 #scan-screen {
@@ -19,34 +20,31 @@
 				.box-padding-style;
 				text-align: center;
 
-				> #scan-box-content-image {
+				> #scan-box-content {
 
-					//TODO : Change this to implement relative size
-					width: @image-size;
-					height: @image-size;
+          position: relative;
 
-					margin: 40px auto;
-					
-					background-color: @pure-white;
-					border-radius: @border-box-radius-size;
-					box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
-					
+          // TODO: via JS could do the half of the screen
+          height: 500px;
+          margin: @scan-margin;
+          
+          background-color: @pure-white;
+          border-radius: @border-box-radius-size;
+          box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
+          
+          > #scan-box-content-image {
 
-					background-image: url(assets/images/iphone_qr.png);
-					background-repeat: no-repeat;
-					background-size: 90%;
-					background-position-x: 25px;
-					background-position-y: 27px;
+            .center_align(225px, 135px);
+            background-image: url(assets2/images/iphone_qr.jpg);
+            background-size: 135px 225px;
+
+          }
 
 				}
 
 				> .detail-text {
 
-					width: @image-size;
-					margin: 13px auto;
-
-					margin-top: -16px;
-
+					margin: 0 @scan-margin @scan-margin/2 @scan-margin;
 
 				}
 
@@ -70,15 +68,13 @@
 
 			> .box-content {
 
+				> #scan-box-content {
 
-				> #scan-box-content-image {
+          > #scan-box-content-image {
 
-					background-image: url(assets/images/iphone_qr_error.png);
-					background-repeat: no-repeat;
-					background-size: 90%;
-					background-position-x: 25px;
-					background-position-y: 27px;
+            background-image: url(assets2/images/iphone_qr_error.jpg);
 
+          }
 				}
 
 			}
