@@ -75,7 +75,16 @@
       {{/if}}
 
     {{else}}
-      It does not have connection
+
+      <div class="text is-font-black is-center">{{I18n login_msg_reconnect}}</div>
+
+      <div class="space by-three"></div>
+      <div class="space by-three"></div>
+
+      {{view Yn.SingleLargeButtonView class="is-grey is-font-black" 
+        contentI18n="reconnect" 
+        action="reconnect" }}
+
     {{/if}}
 
   </div>		
