@@ -9,67 +9,73 @@
 
   <div class="row three">
 
-    {{#if venueUser }}
+    {{#if hasConnection }}
 
-      <div class="login-box is-logged">
+      {{#if venueUser }}
 
-
-        {{view Yn.SingleLargeButtonView class="is-orange is-font-white" 
-          contentI18n="enter" 
-          action="goToScan" }}
-
-        
-        {{view Yn.SingleLargeButtonView class="is-black is-font-white" 
-          contentI18n="logout" 
-          action="logout" }}	
+        <div class="login-box is-logged">
 
 
-        <div class="space by-two"></div>
+          {{view Yn.SingleLargeButtonView class="is-orange is-font-white" 
+            contentI18n="enter" 
+            action="goToScan" }}
 
-
-        {{#if showCameraDeviceButton}}
-          {{#view Yn.BtapView class="rectangle-button-adaptative is-orange button-text is-small is-font-white is-middle" 
-            action="changeCamera" }}
-
-            {{#if isDeviceFront }}
-              {{I18n camera_front}}
-            {{else}}
-              {{I18n camera_back}}
-            {{/if}}
-
-          {{/view}}
-        {{/if}}
           
-
-      </div>		
-
-    {{ else }}
-
-      <div class="login-box is-unlogged">
-
-        <div class="big-input-content">
-
-          {{view Yn.InputView id="username" class="big-input up" 
-            inputName="username"
-            type="username"
-            placeholderI18n="username" }} 
-
-          {{view Yn.InputView id="password" class="big-input down" 
-            inputName="password"
-            type="password"
-            placeholderI18n="password" }} 
-
-        </div>
+          {{view Yn.SingleLargeButtonView class="is-black is-font-white" 
+            contentI18n="logout" 
+            action="logout" }}	
 
 
-        {{view Yn.SingleLargeButtonView class="is-grey is-font-black" 
-          contentI18n="login"
-          inputs="username password" 
-          action="login" }}
+          <div class="space by-two"></div>
 
 
-      </div>		
+          {{#if showCameraDeviceButton}}
+            {{#view Yn.BtapView class="rectangle-button-adaptative is-orange button-text is-small is-font-white is-middle" 
+              action="changeCamera" }}
 
+              {{#if isDeviceFront }}
+                {{I18n camera_front}}
+              {{else}}
+                {{I18n camera_back}}
+              {{/if}}
+
+            {{/view}}
+          {{/if}}
+            
+
+        </div>		
+
+      {{ else }}
+
+        <div class="login-box is-unlogged">
+
+          <div class="big-input-content">
+
+            {{view Yn.InputView id="username" class="big-input up" 
+              inputName="username"
+              type="username"
+              placeholderI18n="username" }} 
+
+            {{view Yn.InputView id="password" class="big-input down" 
+              inputName="password"
+              type="password"
+              placeholderI18n="password" }} 
+
+          </div>
+
+
+          {{view Yn.SingleLargeButtonView class="is-grey is-font-black" 
+            contentI18n="login"
+            inputs="username password" 
+            action="login" }}
+
+
+        </div>		
+
+      {{/if}}
+
+    {{else}}
+      It does not have connection
     {{/if}}
 
   </div>		
