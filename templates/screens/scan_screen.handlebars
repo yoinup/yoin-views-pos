@@ -1,6 +1,6 @@
 {{#with view}}
 
-{{#view Yn.HeaderView id="scan-header" class="with-small-shadow"}}
+{{#view Yn.HeaderView id="scan-header" class="with-small-shadow" }}
 
 	{{view Yn.BackButtonView }}
 	<div class="brand-container is-small"></div>
@@ -8,7 +8,8 @@
 {{/view}}
 
 
-<div class="screen-container">
+{{#view Yn.ScrollerView class="screen-container"
+	exclude=".header" }}
 
 	<div class="space by-two"></div>
 
@@ -43,6 +44,6 @@
 			action="scan" }}
 
 
-</div>
+{{/view}}
 
 {{/with}}
