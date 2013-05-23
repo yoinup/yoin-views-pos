@@ -13,6 +13,23 @@
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
 
+    {{#if showCameraDeviceButton}}
+      {{#view Yn.BtapView class="rectangle-button-adaptative is-orange button-text is-small is-font-white is-middle" 
+        action="changeCamera" }}
+
+        {{#if isDeviceFront }}
+          {{I18n camera_front}}
+        {{else}}
+          {{I18n camera_back}}
+        {{/if}}
+
+      {{/view}}
+
+    {{/if}}
+
+    {{view Yn.MainButtonView class="is-red"
+        contentI18n="close_session"
+        action="logout" }}
 
 {{/view}}
 
