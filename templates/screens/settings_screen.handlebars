@@ -8,22 +8,130 @@
     {{I18n settings_title}}
   </div>
 
+  {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
+    action="save"}}
+    {{I18n save}}
+  {{/view}}
+
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
+<!--
+    <div class="space by-one"></div>
+
+    <div class="box">
+      <div class="box-content has-padding">
+        <input id="settings-brand-photo" class="" type="file" accept="image/*" capture="camera">
+      </div>
+    </div>
+    -->
+
+    <div class="space by-one"></div>
+
+    <div class="box">
+      <div class="box-content has-padding">
+
+          {{view Yn.InputView id="input-brandname" 
+            class="main-text is-transparent"
+            inputName="brandname"
+            type="text"
+            placeholderI18n="name"
+            valueBinding="brand.name" }}
+        
+      </div>
+    </div>
+
+    <div class="space by-one"></div>
+
+    <div class="box">
+      <div class="box-content  has-padding">
+
+          {{view Yn.InputView id="input-venuename" 
+            class="main-text is-transparent"
+            inputName="venuename"
+            type="text"
+            placeholderI18n="name"
+            valueBinding="venue.name" }}
+        
+      </div>
+
+      <div class="box-content  has-padding">
+
+          {{view Yn.InputView id="input-venueaddress" 
+            class="main-text is-transparent"
+            inputName="venueaddress"
+            type="text"
+            placeholderI18n="address"
+            valueBinding="venue.address" }}
+        
+      </div>
+
+      <div class="box-content  has-padding">
+
+          {{view Yn.InputView id="input-venuezip" 
+            class="main-text is-transparent"
+            inputName="venuezip"
+            type="text"
+            placeholderI18n="zip"
+            valueBinding="venue.zip" }}
+        
+      </div>
+
+      {{#each cities}}
+
+        <div class="box-content">
+        <div class=" box-content-element two-column-table">
+          <div class="main-text left-column main">
+            {{name}}
+          </div>
+          <div class="control right-column">
+            {{view Yn.ToggleCircleButtonView 
+              action="selectCity" 
+              selectedBinding="view.venue.city"
+              contentBinding="this"}}
+          </div>
+        </div>
+        </div>
+      {{/each}}
+
+    </div>
+
+    <div class="space by-one"></div>
 
     {{#if showCameraDeviceButton}}
-      {{#view Yn.BtapView class="rectangle-button-adaptative is-orange button-text is-small is-font-white is-middle" 
-        action="changeCamera" }}
 
-        {{#if isDeviceFront }}
-          {{I18n camera_front}}
-        {{else}}
-          {{I18n camera_back}}
-        {{/if}}
+      <div class="space by-one"></div>
 
-      {{/view}}
+      <div class="box">
+
+        <div class="box-content">
+
+          <div class="box-content-element two-column-table">
+
+            <div class="main-text main left-column">
+              {{I18n camera_device}}
+            </div>
+
+            <div class="control right-column">
+              {{#view Yn.BtapView class="rectangle-button-adaptative is-grey button-text is-small is-font-black is-middle" 
+                action="changeCamera" }}
+
+                {{#if isDeviceFront }}
+                  {{I18n camera_front}}
+                {{else}}
+                  {{I18n camera_back}}
+                {{/if}}
+
+              {{/view}}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
 
     {{/if}}
 
