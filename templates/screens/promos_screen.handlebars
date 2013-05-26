@@ -8,10 +8,19 @@
     {{I18n promos_title}}
   </div>
 
+  {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
+    action="save"}}
+    {{I18n add}}
+  {{/view}}
+
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
+
+
+  <div class="empty-view is-absolute"></div>
+  <div class="empty-text is-absolute">{{I18n empty_promos}}</div>
 
 
 {{/view}}
