@@ -15,14 +15,104 @@
 
 {{/view}}
 
-{{#view Yn.ScrollerView class="screen-container"
-	exclude=".header" }}
+{{view Yn.MenuTabsButtonView id="promos-menu-tabs" 
+  contentBinding="options"
+  selectedBinding="option" }}
 
 
-  <div class="empty-view is-absolute"></div>
-  <div class="empty-text is-absolute">{{I18n empty_promos}}</div>
+<div class="screen-container">
+
+  {{#view Yn.TabMainView
+    currentTabViewBinding="option"}}
+
+      {{#view Yn.ScrollerView
+        exclude=".header, #promos-menu-tabs"
+        viewName="promos-option-running" }}
 
 
-{{/view}}
+        {{#if runningProducts.length }}
+
+          {{#each runningProducts}}
+            <div class="space by-one"></div>
+
+            <div class="box">
+              <div class="box-content">
+                <div class="box-content-element three-column-table">
+
+                  <div class="picture left-column">
+                    {{view Yn.SquareImageView class="is-normal" 
+                      contentBinding="this" 
+                      withPhoto=true }}
+                  </div>
+
+                  <div class="name middle-column">
+                    {{this.name}}
+                  </div>
+
+                  <div class="action-button right-column">
+                    {{view Yn.AdaptativeButtonView class="is-grey button-text is-small is-font-black" 
+                      contentI18n="edit"
+                      actionContentBinding=this
+                      action="edit" }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {{/each}}
+
+          <div class="space by-one"></div>
+
+        {{else}}
+          <div class="empty-view is-absolute"></div>
+          <div class="empty-text is-absolute">{{I18n empty_promos}}</div>
+        {{/if}}
+
+      {{/view}}
+
+      {{#view Yn.ScrollerView
+        exclude=".header, #promos-menu-tabs"
+        viewName="promos-option-stopped" }}
+
+        {{#if stoppedProducts.length }}
+
+          {{#each stoppedProducts}}
+            <div class="space by-one"></div>
+
+            <div class="box">
+              <div class="box-content">
+                <div class="box-content-element three-column-table">
+
+                  <div class="picture left-column">
+                    {{view Yn.SquareImageView class="is-normal" 
+                      contentBinding="this" 
+                      withPhoto=true }}
+                  </div>
+
+                  <div class="name middle-column">
+                    {{this.name}}
+                  </div>
+
+                  <div class="action-button right-column">
+                    {{view Yn.AdaptativeButtonView class="is-grey button-text is-small is-font-black" 
+                      contentI18n="edit"
+                      actionContentBinding=this
+                      action="edit" }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {{/each}}
+
+        {{else}}
+          <div class="empty-view is-absolute"></div>
+        {{/if}}
+
+      {{/view}}
+
+  {{/view}}
+
+</div>
 
 {{/with}}
