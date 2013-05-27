@@ -1,4 +1,3 @@
-
 {{#with view}}
 
 {{#view Yn.HeaderView class="with-small-shadow"}}
@@ -8,12 +7,27 @@
     {{I18n promo_title}}
   </div>
 
+  {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
+    action="save"}}
+    {{#if isNewElement }}
+      {{I18n create}}
+    {{else}}
+      {{I18n save}}
+    {{/if}}
+  {{/view}}
+
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
+  {{#unless isExecuting }}
 
 
+  {{else}}
+
+    {{view Yn.SpinnerView}}
+
+  {{/unless}}
 {{/view}}
 
 {{/with}}
