@@ -118,23 +118,9 @@
 
 			{{else}}
 
-				{{#if selected.creationFbId }}
-
-					{{view Yn.UserShortBlockView
-            imagetype="is-big"
-						typeBinding="selected.creationType"
-						fbIdBinding="selected.creationFbId"
-						fbNameBinding="selected.creationUsername" }}
-
-				{{else}}
-
-        {{view Yn.UserShortBlockView
-            imagetype="is-big"
-						typeBinding="selected.creationType"
-						phoneNumberBinding="selected.creationPhone"
-						phoneNameBinding="selected.creationPhone" }}
-
-				{{/if}}
+        {{view Yn.UnregisteredUserShortBlockView
+          imagetype="is-big"
+          invitationBinding="selected" }}
 
 			{{/if}}
 
