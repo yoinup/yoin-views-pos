@@ -42,6 +42,25 @@
 			contentI18n="scan"
 			action="scan" }}
 
+  <div class="box">
+    <div class="box-content">
+      <div class="box-content-element two-column-table">
+        <div class="main-text left-column main">
+          {{view Yn.InputView id="invitation-code" class="single-input"
+            inputName="invitation-code"
+            placeholderI18n="invitation_code_placeholder" }} 
+        </div>
+        <div class="control right-column">
+          {{view Yn.AdaptativeButtonView class="is-blue button-text is-small is-font-white"
+            contentI18n="search"
+            action="insertCode"}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<div class="space by-one"></div>
+
 
 {{/view}}
 
