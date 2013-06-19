@@ -11,7 +11,7 @@
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
 
-	<div class="space by-one"></div>
+  <div class="space by-two"></div>
 
 	<div class="box">
 
@@ -36,7 +36,7 @@
 
 	</div>
 
-  <div class="space by-one"></div>
+  <div class="space by-two"></div>
   <div class="separator-line"></div>
   <div class="space by-one"></div>
 
@@ -46,16 +46,10 @@
 
   <div class="space by-one"></div>
 
-  <div class="box">
-    <div class="box-content">
-      <div class="box-content-element ">
-        <div class="main-text  main">
-          {{view Yvi.ScanInputView id="invitation-code" class="single-input"
-            inputName="invitation-code"
-            placeholderI18n="invitation_code_placeholder" }} 
-        </div>
-      </div>
-    </div>
+  <div class="box is-half">
+    {{view Yvi.ScanInputView id="invitation-code" class="single-input"
+      inputName="invitation-code"
+      placeholderI18n="invitation_code_placeholder" }} 
   </div>
 
   {{view Yn.MainButtonView class="single-space is-blue"
