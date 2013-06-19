@@ -11,7 +11,7 @@
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
 
-	<div class="space by-two"></div>
+	<div class="space by-one"></div>
 
 	<div class="box">
 
@@ -28,39 +28,39 @@
           <div id="scan-box-content-image"></div>
       {{/view}}
 
-			<div class="detail-text">
-
-				{{I18n scan_help}}
-
-			</div>
+      {{view Yn.MainButtonView class="single-space is-blue"
+          contentI18n="scan"
+          action="scan" }}
 
 		</div>
 
 	</div>
 
-	{{view Yn.MainButtonView class="is-blue"
-			contentI18n="scan"
-			action="scan" }}
+  <div class="space by-one"></div>
+  <div class="separator-line"></div>
+  <div class="space by-one"></div>
+
+  <div class="main-text text is-center">
+    {{I18n ask_manual_code}} 
+  </div>
+
+  <div class="space by-one"></div>
 
   <div class="box">
     <div class="box-content">
-      <div class="box-content-element two-column-table">
-        <div class="main-text left-column main">
+      <div class="box-content-element ">
+        <div class="main-text  main">
           {{view Yvi.ScanInputView id="invitation-code" class="single-input"
             inputName="invitation-code"
             placeholderI18n="invitation_code_placeholder" }} 
-        </div>
-        <div class="control right-column">
-          {{view Yn.AdaptativeButtonView class="is-blue button-text is-small is-font-white"
-            contentI18n="search"
-            action="insertCode"}}
         </div>
       </div>
     </div>
   </div>
 
-	<div class="space by-one"></div>
-
+  {{view Yn.MainButtonView class="single-space is-blue"
+      contentI18n="submit"
+      action="insertCode" }}
 
 {{/view}}
 

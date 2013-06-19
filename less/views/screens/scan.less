@@ -7,7 +7,10 @@
 @import 'radius';
 
 
-@scan-margin: 15px;
+@scan-margin: @size-one-space;
+
+@image-height: 112.5px;
+@image-width: 67.5px;
 
 #scan-screen {
 
@@ -16,8 +19,8 @@
 		> .box {
 
 			> .box-content {
-
-				.box-padding-style;
+        
+        padding: 0px;
 				text-align: center;
 
 				> #scan-box-content {
@@ -29,23 +32,17 @@
           box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
 
           // TODO: via JS could do the half of the screen
-          height: 180px;
+          height: @image-height + @scan-margin*2;
           margin: @scan-margin;
           
           > #scan-box-content-image {
 
             background-image: url(assets2/images/iphone_qr.jpg);
 
-            .center_align(150px, 90px);
-            background-size: 90px 150px;
+            .center_align(@image-height, @image-width);
+            background-size: @image-width @image-height;
 
           }
-
-				}
-
-				> .detail-text {
-
-					margin: 0 @scan-margin @scan-margin/2 @scan-margin;
 
 				}
 
@@ -57,6 +54,7 @@
 	}
 
 }
+
 
 
 
@@ -87,8 +85,10 @@
 }
 
 
+@image-height-tablet: 225px;
+@image-width-tablet: 135px;
 
-@scan-margin-tablet: 30px;
+@scan-margin-tablet: @size-one-space*2;
 
 @media only screen and (min-width: 600px) and (max-width: 960px) {
 
@@ -96,21 +96,15 @@
 
 		> #scan-box-content {
 
-			height: 500px;
-			margin: @scan-margin-tablet;
+      height: @image-height-tablet + @scan-margin-tablet*2;
+      margin: @scan-margin-tablet;
 			
 			> #scan-box-content-image {
 
-				.center_align(225px, 135px);
-				background-size: 135px 225px;
+        .center_align(@image-height-tablet, @image-width-tablet);
+        background-size: @image-width-tablet @image-height-tablet;
 
 			}
-
-		}
-
-		> .detail-text {
-
-			margin: 0 @scan-margin-tablet @scan-margin-tablet/2 @scan-margin-tablet;
 
 		}
 
