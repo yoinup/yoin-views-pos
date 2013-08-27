@@ -14,7 +14,8 @@
 
   {{view Yn.VenueBoxView 
     productBinding="selected.product"
-    isConsumedBinding="isConsumed"
+    isConsumedBinding="selected.consumed"
+    isConsumedDateBinding="selected.dateConsumed"
     hasDescription=true
     brandBinding="venue.brand"
     venueBinding="venue" }}
