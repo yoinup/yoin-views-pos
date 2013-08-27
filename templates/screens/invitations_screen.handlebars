@@ -1,4 +1,3 @@
-
 {{#with view}}
 
 {{#view Yn.HeaderView class="with-small-shadow"}}
@@ -12,7 +11,8 @@
 
 {{/view}}
 
-<div class="screen-container">
+{{#view Yn.ScrollerView class="screen-container"
+	exclude=".header" }}
 
   {{#if invitations.isLoaded }}
 
@@ -77,6 +77,6 @@
     {{view Yn.SpinnerView}}
   {{/if}}
 
-</div>
+{{/view}}
 
 {{/with}}
