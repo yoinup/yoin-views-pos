@@ -25,21 +25,9 @@
 
 	<div class="box">
 
-    {{#if selected.consumed}}
-
-      <div class="box-title-top detail-text text is-right">
-        {{I18n exchanged_invitation}}
-        {{humanize dateBinding="selected.dateConsumed" }}
-        <span class="icon with-text is-icon-small" icon="w"></span>
-      </div>
-
-    {{else}}
-
-      <div class="box-title-top">
-        {{I18n consignee}}
-      </div>
-
-    {{/if}}
+    <div class="box-title-top">
+      {{I18n consignee}}
+    </div>
 
 		<div class="box-content">
 
