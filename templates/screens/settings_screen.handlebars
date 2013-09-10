@@ -26,40 +26,34 @@
 
     <div class="box">
       <div class="box-content has-padding">
-
           {{view Yn.InputView id="input-brandname" 
             class="main-text is-transparent"
             inputName="brandname"
             type="text"
             placeholderI18n="name"
             valueBinding="brand.name" }}
-        
       </div>
     </div>
 
     <div class="space by-one"></div>
 
     <div class="box">
-      <div class="box-content  has-padding">
-
+      <div class="box-content has-padding">
           {{view Yn.InputView id="input-venuename" 
             class="main-text is-transparent"
             inputName="venuename"
             type="text"
             placeholderI18n="name"
             valueBinding="venue.name" }}
-        
       </div>
 
       <div class="box-content  has-padding">
-
           {{view Yn.InputView id="input-venueaddress" 
             class="main-text is-transparent"
             inputName="venueaddress"
             type="text"
             placeholderI18n="address"
             valueBinding="venue.address" }}
-        
       </div>
 
       <div class="box-content  has-padding">
@@ -135,6 +129,43 @@
 
 
     {{/if}}
+
+
+    <div class="space by-one"></div>
+
+    <div class="box">
+
+      <div class="box-content">
+
+        <div class="box-content-element two-column-table">
+
+          <div class="main-text main left-column">
+            {{I18n environment}}
+            {{#if isSandbox }}
+              ({{I18n sandbox_env}})
+            {{else}}
+              ({{I18n live_env}})
+            {{/if}}
+          </div>
+
+          <div class="control right-column">
+            {{#view Yn.BtapView class="rectangle-button-adaptative is-blue button-text is-small is-font-white is-middle" 
+              action="changeEnvironment" }}
+
+              {{#if isSandbox }}
+                {{I18n move_to_live}}
+              {{else}}
+                {{I18n move_to_sandbox}}
+              {{/if}}
+
+            {{/view}}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
     {{view Yn.MainButtonView class="is-red"
         contentI18n="close_session"

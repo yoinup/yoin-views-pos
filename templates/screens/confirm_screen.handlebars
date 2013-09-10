@@ -15,7 +15,7 @@
   {{view Yn.VenueBoxView 
     productBinding="selected.product"
     isConsumedBinding="selected.consumed"
-    isConsumedDateBinding="selected.dateConsumed"
+    isExpiredBinding="selected.expired"
     hasDescription=true
     brandBinding="venue.brand"
     venueBinding="venue" }}
@@ -50,13 +50,13 @@
 	</div>
   
 
-  {{#unless selected.consumed}}
+  {{#if canConfirmInvitation}}
 
     {{view Yn.MainButtonView class="is-green"
         contentI18n="confirm"
         action="confirm" }}
 
-  {{/unless}}
+  {{/if}}
 
 
 {{/view}}
