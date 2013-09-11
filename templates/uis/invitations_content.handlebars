@@ -18,9 +18,30 @@
             <div class="box-content-element three-column-table">
 
               <div class="picture left-column">
-                {{view Yn.SquareImageView class="is-normal" 
-                  contentBinding="product" 
-                  withPhoto=true }}
+
+                {{#if toUser }}
+                  {{view Yn.SquareImageView class="is-normal" 
+                    contentBinding="toUser" 
+                    withPhoto=true }}
+                {{else}}
+
+                  {{#if creationFbId }}
+
+                    {{view Yn.SquareImageView class="is-normal" 
+                      contentBinding="creationFbId"
+                      withPhoto=true 
+                      isFBUser=true}}
+
+                  {{else}}
+
+                    {{view Yn.SquareImageView class="is-normal" 
+                      contentBinding="product" 
+                      withPhoto=true }}
+
+                  {{/if}}
+
+                {{/if}}
+
               </div>
 
               <div class="name middle-column">
