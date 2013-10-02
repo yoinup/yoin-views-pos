@@ -17,16 +17,15 @@
     contentBinding="_options"
     selectedBinding="option" }}
 
-
-  {{#if isPending }}
-    {{view Yvi.InvitationsContentView
+  {{view Yvi.InvitationsContentView
+      isSelectedBinding="isPending"
       invitationsBinding="pendingInvitations"
       exclude=".header, #invitations-menu-tabs" }}
-  {{else}}
-    {{view Yvi.InvitationsContentView
+
+  {{view Yvi.InvitationsContentView
+      isSelectedBinding="isConsumed"
       invitationsBinding="consumedInvitations"
       exclude=".header, #invitations-menu-tabs" }}
-  {{/if}}
 
 
 </div>
