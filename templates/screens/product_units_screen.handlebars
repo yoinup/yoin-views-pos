@@ -11,7 +11,8 @@
 
 {{/view}}
 
-<div class="screen-container">
+{{#view Yn.ScrollerView class="screen-container"
+  exclude=".header" }}
 
   {{#if productUnits.isLoaded }}
 
@@ -25,15 +26,8 @@
 
           <div class="box-content">
 
-            <div class="box-content-element two-column-table">
+            <div class="box-content-element one-column-table">
 
-              <div class="picture left-column">
-
-                {{view Yn.SquareImageView class="is-normal" 
-                  contentBinding="product" 
-                  withPhoto=true }}
-
-              </div>
 
               <div class="name middle-column main">
 
@@ -43,11 +37,6 @@
 
                 <div class="detail-text">
                   {{localizer}}
-                </div>
-
-                <div class="detail-text">
-                  <span class="icon with-text is-icon-small" icon="w"></span>
-                  {{humanize dateBinding="created" }}
                 </div>
 
               </div>
@@ -73,8 +62,6 @@
     {{view Yn.SpinnerView}}
   {{/if}}
 
-
-
-</div>
+{{/view}}
 
 {{/with}}
