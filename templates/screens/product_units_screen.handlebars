@@ -3,7 +3,13 @@
 {{#view Yn.HeaderView class="with-small-shadow"}}
 
   {{view Yn.MenuButtonView }}
-	<div class="brand-container is-small"></div>
+  <div class="header-title">
+    {{#if productUnits.length }}
+      {{I18n product_units_title}} ({{productUnits.length}})
+    {{else}}
+      {{I18n product_units_title}}
+    {{/if}}
+  </div>
 
   {{view Yn.IconBtapView class="header-button rectangle-button l-right is-orange button-text is-small" 
     icon="e"
@@ -18,25 +24,27 @@
 
     {{#if productUnits.length }}
 
-      <div class="space by-one"></div>
+      <div class="box-frame">
 
       {{#each productUnits}}
 
-        <div class="box">
+          <div class="box is-two-per-line">
 
-          <div class="box-content">
+            <div class="box-content">
 
-            <div class="box-content-element one-column-table">
+              <div class="box-content-element one-column-table">
 
 
-              <div class="name middle-column main">
+                <div class="name middle-column main">
 
-                <div class="main-text">
-                  {{product.name}}
-                </div>
+                  <div class="main-text">
+                    {{product.name}}
+                  </div>
 
-                <div class="detail-text">
-                  {{localizer}}
+                  <div class="detail-text">
+                    {{localizer}}
+                  </div>
+
                 </div>
 
               </div>
@@ -45,13 +53,13 @@
 
           </div>
 
-        </div>
-
-        <div class="space by-one"></div>
 
       {{/each}}
 
+
       <div class="space by-one"></div>
+
+      </div>
 
     {{else}}
       <div class="empty-view is-absolute"></div>
