@@ -1,0 +1,54 @@
+{{#with view}}
+
+{{#view Yn.HeaderView class="with-small-shadow"}}
+
+	{{view Yn.BackButtonView }}
+	<div class="brand-container is-small"></div>
+
+  {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
+    action="save"}}
+      {{I18n sync}}
+  {{/view}}
+
+{{/view}}
+
+{{#view Yn.ScrollerView class="screen-container"
+  exclude=".header" }}
+
+    <div class="space by-two"></div>
+
+    <div class="detail-text is-center is-not-in-box">
+      {{I18n pending_actions_message}}
+    </div>
+
+    <div class="space by-two"></div>
+
+    {{#if items.length }}
+
+      <div class="box-frame">
+
+      {{#each items}}
+
+          <div class="box is-two-per-line">
+            <div class="box-content">
+              <div class="box-content-element one-column-table main-text center">
+                    {{code}}
+              </div>
+
+            </div>
+
+          </div>
+
+
+      {{/each}}
+
+
+      <div class="space by-one"></div>
+
+      </div>
+
+    {{/if}}
+
+{{/view}}
+
+{{/with}}

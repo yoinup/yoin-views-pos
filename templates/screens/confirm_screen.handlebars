@@ -1,61 +1,66 @@
 {{#with view}}
 
 {{#view Yn.HeaderView class="with-small-shadow"}}
-
 	{{view Yn.BackButtonView }}
 	<div class="brand-container is-small"></div>
-
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
 	exclude=".header" }}
 
-	<div class="space by-two"></div>
+  <div class="space by-two"></div>
 
-  {{view Yn.VenueBoxView 
-    productBinding="selected.product"
-    isConsumedBinding="selected.consumed"
-    isExpiredBinding="selected.expired"
-    hasDescription=true
-    brandBinding="venue.brand"
-    venueBinding="venue" }}
+  {{#if selected}}
 
+    {{view Yn.VenueBoxView 
+      productBinding="selected.product"
+      isConsumedBinding="selected.consumed"
+      isExpiredBinding="selected.expired"
+      brandBinding="venue.brand"
+      venueBinding="venue" }}
 
-	<div class="space by-two"></div>
+    <div class="space by-two"></div>
 
-	<div class="box">
+    <div class="box">
 
-    <div class="box-title-top">
-      {{I18n consignee}}
+      <div class="box-title-top">
+        {{I18n consignee}}
+      </div>
+
+      <div class="box-content">
+
+        {{#if selected.toUser }}
+
+          {{view Yn.UserShortBlockView
+            imagetype="is-x-big"
+            contentBinding="selected.toUser" }}
+
+        {{else}}
+
+          {{view Yn.UnregisteredUserShortBlockView
+            imagetype="is-x-big"
+            invitationBinding="selected" }}
+
+        {{/if}}
+
+      </div>
+
     </div>
 
-		<div class="box-content">
-
-			{{#if selected.toUser }}
-
-				{{view Yn.UserShortBlockView
-          imagetype="is-x-big"
-					contentBinding="selected.toUser" }}
-
-			{{else}}
-
-        {{view Yn.UnregisteredUserShortBlockView
-          imagetype="is-x-big"
-          invitationBinding="selected" }}
-
-			{{/if}}
-
-		</div>
-
-	</div>
+  {{else}}
+    {{view Yn.VenueBoxView 
+      productBinding="productUnit.product"
+      isConsumedBinding="productUnit.consumed"
+      isProductUnit=true
+      brandBinding="venue.brand"
+      venueBinding="venue" }}
+  {{/if}}
   
 
   {{#if canConfirmInvitation}}
-
     {{view Yn.MainButtonView class="is-green"
         contentI18n="confirm"
         action="confirm" }}
-
   {{/if}}
 
 
