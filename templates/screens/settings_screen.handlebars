@@ -34,7 +34,7 @@
           <div class="box-content-element one-column-table">
             <div class="name middle-column main">
               <div class="main-text">
-                {{I18n dashboard_pending_invitations}} ({{productUnitsLength}})
+                {{I18n dashboard_pending_invitations}} ({{pendingInvitationLength}})
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
           <div class="box-content-element one-column-table">
             <div class="name middle-column main">
               <div class="main-text">
-                {{I18n dashboard_consumed_invitations}} ({{productUnitsLength}})
+                {{I18n dashboard_consumed_invitations}} ({{consumedInvitationLength}})
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
       <div class="box">
 
         {{#view Yn.BtapView class="box-content has-tap"
-          action="goToPendingAction" }} 
+          action="goToPendingActions" }} 
           <div class="box-content-element two-column-table">
             <div class="left-column main main-text">
                 {{I18n pending_action_button}}

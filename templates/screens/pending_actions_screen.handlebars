@@ -5,15 +5,23 @@
 	{{view Yn.BackButtonView }}
 	<div class="brand-container is-small"></div>
 
-  {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
-    action="save"}}
-      {{I18n sync}}
-  {{/view}}
+  {{#if items.length }}
+
+    {{#view Yn.AdaptativeButtonView class="header-button l-right is-blue button-text is-small is-font-white" 
+      action="sync"}}
+        {{I18n sync}}
+    {{/view}}
+
+  {{/if}}
 
 {{/view}}
 
 {{#view Yn.ScrollerView class="screen-container"
   exclude=".header" }}
+
+    {{#if isExecutingAction}} 
+      {{view Yn.SpinnerView }}
+    {{/if}}
 
     <div class="space by-two"></div>
 
