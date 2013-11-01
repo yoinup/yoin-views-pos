@@ -14,7 +14,7 @@
 
     {{view Yn.VenueBoxView 
       productBinding="selected.product"
-      isConsumedBinding="selected.consumed"
+      isConsumedBinding="selected.isConsumed"
       isExpiredBinding="selected.expired"
       brandBinding="venue.brand"
       venueBinding="venue" }}
@@ -50,7 +50,7 @@
   {{else}}
     {{view Yn.VenueBoxView 
       productBinding="productUnit.product"
-      isConsumedBinding="productUnit.consumed"
+      isConsumedBinding="productUnit.isConsumed"
       isProductUnit=true
       brandBinding="venue.brand"
       venueBinding="venue" }}
