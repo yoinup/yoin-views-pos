@@ -75,24 +75,6 @@
       {{/view}}
     </div>
 
-    {{#if hasPendingAction}}
-      <div class="space by-one"></div>
-      <div class="box">
-
-        {{#view Yn.BtapView class="box-content has-tap"
-          action="goToPendingActions" }} 
-          <div class="box-content-element two-column-table">
-            <div class="left-column main main-text">
-                {{I18n pending_action_button}}
-            </div>
-            <div class="control right-column">
-              <span class="icon is-icon-normal is-icon-grey with-text arrow"></span>
-            </div>
-          </div>
-        {{/view}}
-      </div>
-    {{/if}}
-
 
     <div class="space by-one"></div>
 
@@ -172,6 +154,17 @@
     {{view Yn.MainButtonView class="is-red"
         contentI18n="close_session"
         action="logout" }}
+
+    {{#if hasPendingAction}}
+
+      {{view Yn.IconBtapView class="button-pending-action rectangle-button is-grey is-small is-font-black" 
+        icon="l"
+        action="goToPendingActions"}}
+
+    {{/if}}
+
+
+
 
 {{/view}}
 
