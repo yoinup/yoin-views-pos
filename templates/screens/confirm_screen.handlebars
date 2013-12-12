@@ -10,7 +10,7 @@
 
   <div class="space by-two"></div>
 
-  {{#if selected}}
+  {{#if selected.product}}
 
     {{view Yn.VenueBoxView 
       productBinding="selected.product"
@@ -48,12 +48,16 @@
     </div>
 
   {{else}}
-    {{view Yn.VenueBoxView 
-      productBinding="productUnit.product"
-      isConsumedBinding="productUnit.isConsumed"
-      isProductUnit=true
-      brandBinding="venue.brand"
-      venueBinding="venue" }}
+
+    {{#if productUnit.product}}
+        {{view Yn.VenueBoxView 
+          productBinding="productUnit.product"
+          isConsumedBinding="productUnit.isConsumed"
+          isProductUnit=true
+          brandBinding="venue.brand"
+          venueBinding="venue" }}
+    {{/if}}
+
   {{/if}}
   
 
